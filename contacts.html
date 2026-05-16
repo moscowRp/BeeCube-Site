@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BeeCube — Контакты</title>
+<link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg-primary: #0f1117;
+    --bg-secondary: #161922;
+    --bg-card: #1a1f2e;
+    --accent-blue: #22e633;
+    --accent-gold: #f5c842;
+    --accent-purple: #ccaf09;
+    --accent-green: #2ed573;
+    --text-primary: #21eb43;
+    --text-secondary: #8b92a8;
+    --text-muted: #ee7919;
+    --border-color: #252b3e;
+    --tag-bg: #232a3d;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Nunito', sans-serif; background: var(--bg-primary); color: var(--text-primary); min-height: 100vh; overflow-x: hidden; }
+  .navbar { background: rgba(15,17,23,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-color); padding: 0 24px; height: 60px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+  .navbar-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .logo-icon { width: 36px; height: 36px; background: linear-gradient(135deg, #4a9eff, #7c5cff); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 18px; }
+  .logo-text { font-family: 'Russo One', sans-serif; font-size: 16px; color: var(--text-primary); letter-spacing: 1px; line-height: 1; }
+  .logo-text span { color: var(--accent-blue); }
+  .navbar-nav { display: flex; align-items: center; gap: 4px; list-style: none; }
+  .navbar-nav a { color: var(--text-secondary); text-decoration: none; padding: 6px 14px; border-radius: var(--radius-sm); font-size: 13px; font-weight: 600; transition: all 0.2s; display: flex; align-items: center; gap: 6px; }
+  .navbar-nav a:hover, .navbar-nav a.active { background: var(--tag-bg); color: var(--text-primary); }
+  .navbar-hamburger { display: none; flex-direction: column; gap: 4px; cursor: pointer; padding: 8px; border: none; background: none; }
+  .navbar-hamburger span { display: block; width: 22px; height: 2px; background: var(--text-secondary); border-radius: 2px; }
+  .mobile-menu { display: none; position: fixed; top: 60px; left: 0; right: 0; background: var(--bg-secondary); border-bottom: 1px solid var(--border-color); padding: 12px; z-index: 99; flex-direction: column; gap: 4px; }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { color: var(--text-secondary); text-decoration: none; padding: 12px 16px; border-radius: var(--radius-sm); font-size: 14px; font-weight: 600; transition: all 0.2s; }
+  .mobile-menu a:hover { background: var(--tag-bg); color: var(--text-primary); }
+  .page-content { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+  .page-title { font-family: 'Russo One', sans-serif; font-size: 28px; margin-bottom: 24px; color: var(--text-primary); }
+  .contact-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; margin-bottom: 30px; }
+  .contact-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 24px; text-align: center; transition: all 0.2s; }
+  .contact-card:hover { border-color: var(--accent-blue); transform: translateY(-2px); }
+  .contact-icon { font-size: 36px; margin-bottom: 12px; }
+  .contact-card h3 { font-size: 16px; font-weight: 800; color: var(--text-primary); margin-bottom: 6px; }
+  .contact-card p { font-size: 13px; color: var(--text-secondary); font-weight: 600; margin-bottom: 12px; }
+  .contact-link { display: inline-block; background: linear-gradient(135deg, #4a9eff, #7c5cff); color: #fff; text-decoration: none; padding: 8px 18px; border-radius: var(--radius-sm); font-size: 13px; font-weight: 800; transition: opacity 0.2s; }
+  .contact-link:hover { opacity: 0.85; }
+  .info-block { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 20px; }
+  .info-block h3 { font-size: 16px; font-weight: 800; color: var(--accent-blue); margin-bottom: 10px; }
+  .info-block p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; font-weight: 600; }
+  @media (max-width: 768px) {
+    .navbar-nav { display: none; }
+    .navbar-hamburger { display: flex; }
+    .page-content { padding: 24px 14px; }
+    .page-title { font-size: 22px; }
+    .contact-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="swordworld-shop (3) (2).html" class="navbar-logo">
+    <div class="logo-icon">⚔️</div>
+    <div class="logo-text">BEE<br><span>CUBE</span></div>
+  </a>
+  <ul class="navbar-nav">
+    <li><a href="swordworld-shop (3) (2).html">🏠 Главная</a></li>
+    <li><a href="rules.html">❓ Правила</a></li>
+    <li><a href="contacts.html" class="active">🔔 Контакты</a></li>
+  </ul>
+  <button class="navbar-hamburger" id="hamburger" aria-label="Меню">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="swordworld-shop (3) (2).html">🏠 Главная</a>
+  <a href="rules.html">❓ Правила</a>
+  <a href="contacts.html">🔔 Контакты</a>
+</div>
+
+<div class="page-content">
+  <h1 class="page-title">📞 Контакты</h1>
+
+  <div class="contact-grid">
+    <div class="contact-card">
+      <div class="contact-icon">💬</div>
+      <h3>Telegram</h3>
+      <p>Быстрая связь и поддержка</p>
+      <a href="https://t.me/beecube_support" target="_blank" class="contact-link">Написать →</a>
+    </div>
+
+    <div class="contact-card">
+      <div class="contact-icon">🎮</div>
+      <h3>Discord</h3>
+      <p>Сообщество и помощь</p>
+      <a href="https://discord.gg/beecube" target="_blank" class="contact-link">Присоединиться →</a>
+    </div>
+
+    <div class="contact-card">
+      <div class="contact-icon">📧</div>
+      <h3>Email</h3>
+      <p>Для деловых вопросов</p>
+      <a href="mailto:support@beecube.ru" class="contact-link">Написать →</a>
+    </div>
+
+    <div class="contact-card">
+      <div class="contact-icon">📱</div>
+      <h3>VK</h3>
+      <p>Новости и обновления</p>
+      <a href="https://vk.com/beecube" target="_blank" class="contact-link">Перейти →</a>
+    </div>
+  </div>
+
+  <div class="info-block">
+    <h3>⏰ Время работы поддержки</h3>
+    <p>Мы отвечаем ежедневно с 10:00 до 22:00 (МСК). Среднее время ответа — 15 минут. В ночное время ответ может занять до нескольких часов.</p>
+  </div>
+</div>
+
+<script>
+document.getElementById("hamburger").addEventListener("click", () => {
+  document.getElementById("mobileMenu").classList.toggle("open");
+});
+</script>
+</body>
+</html>
